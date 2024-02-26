@@ -37,7 +37,7 @@ async def OpenSettings(m: "types.Message"):
     except errors.MessageNotModified: pass
     except errors.FloodWait as e:
         await asyncio.sleep(e.x)
-        await show_settings(m)
+        await OpenSettings(m)
     except Exception as err:
         Config.LOGGER.getLogger(__name__).error(err)
 
